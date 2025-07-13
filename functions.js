@@ -48,3 +48,15 @@ function add(param1, param2){
 async function asyncFunc(params) {
     return 
 }
+
+function ask(question, yes, no){
+    if (confirm(question)) yes()
+        else no();
+}
+function showOk(){
+    alert('вы согласны');
+}
+function showCancel(){
+    alert('вы не согласны');
+}
+ask('Вы согласны?', showOk, showCancel);
