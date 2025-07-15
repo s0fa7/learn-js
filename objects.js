@@ -35,4 +35,11 @@ let zp = 0;
 for (let key in salaries){
         zp += salaries[key];
      }
-console.log(`Общая зп сотрудников составляет ${zp}`)
+console.log(`Общая зп сотрудников составляет ${zp}`);
+
+let clone = {};
+
+for (let key in user) {
+  clone[key] = user[key];
+}
+console.log(clone.name);
