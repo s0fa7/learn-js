@@ -43,3 +43,30 @@ for (let key in user) {
   clone[key] = user[key];
 }
 console.log(clone.name);
+
+user.sayHi = function(){
+  console.log(`hello!! i am ${this.name}`);
+}
+user.sayHi();
+
+// function User(name) {
+//   this.name = name;
+//   this.isAdmin = false;
+// }
+// let user1 = new User ("Anna");
+
+let newValue = 0;
+function Accumulator(startingValue){
+  this.value = startingValue;
+
+  this.read = function(newValue){
+    this.value += +newValue
+  }
+}
+
+let accumulator = new Accumulator(1);
+
+accumulator.read(2);
+accumulator.read(1);
+
+console.log(accumulator.value);
