@@ -1,6 +1,18 @@
 let user = {
     name: 'Sara',
-    age: 15
+    age: 15,
+    money: 1000,
+
+  // [Symbol.toPrimitive](hint) {
+  //   console.log(`hint: ${hint}`);
+  //   return hint == "string" ? `{name: "${this.name}"}` : this.money;
+  // },
+  toString() {
+    return `{name: "${this.name}"}`;
+  },
+  valueOf() {
+    return this.money;
+  }
 };
 console.log(user.name);
 user['like dogs'] = true;
@@ -70,3 +82,18 @@ accumulator.read(2);
 accumulator.read(1);
 
 console.log(accumulator.value);
+
+let id = Symbol('oooo');
+console.log (id.description);
+
+let sym = Symbol.for('name');
+let sym2 = Symbol.for('id');
+
+console.log(Symbol.keyFor(sym));
+console.log(Symbol.keyFor(sym2));
+console.log(sym2.description);
+
+console.log(user);
+console.log(+user);
+console.log(user + 500);
+
